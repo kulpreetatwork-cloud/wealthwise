@@ -75,6 +75,16 @@ if (config.env === 'development') {
     }));
 }
 
+// Root route
+app.get('/', (req, res) => {
+    res.status(200).json({
+        success: true,
+        message: '💰 WealthWise API',
+        version: '1.0.0',
+        documentation: '/health for status',
+    });
+});
+
 // Health check endpoint
 app.get('/health', (req, res) => {
     res.status(200).json({
