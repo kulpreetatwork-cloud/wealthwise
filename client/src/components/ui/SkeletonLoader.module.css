@@ -1,0 +1,162 @@
+/* Skeleton Base Styles */
+.card,
+.text,
+.circle,
+.chart,
+.listItem {
+    position: relative;
+    overflow: hidden;
+    background: var(--bg-tertiary);
+    border-radius: 12px;
+}
+
+.text {
+    border-radius: 6px;
+}
+
+.circle {
+    border-radius: 50%;
+}
+
+/* Shimmer Animation */
+.shimmer {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.05) 50%,
+            transparent 100%);
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* List Item */
+.listItem {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    background: transparent;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.listItem:last-child {
+    border-bottom: none;
+}
+
+.listContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* Chart Skeleton */
+.chart {
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+}
+
+.chartBars {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+    gap: 12px;
+}
+
+.chartBar {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    background: var(--bg-secondary);
+    border-radius: 6px 6px 0 0;
+}
+
+/* Dashboard Skeleton Layout */
+.dashboardSkeleton {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px;
+}
+
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.contentGrid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+}
+
+.mainContent {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.transactionsSkeleton {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.listSkeleton {
+    background: var(--bg-secondary);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+/* Page Skeleton */
+.pageSkeleton {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 24px;
+}
+
+.pageContent {
+    margin-top: 24px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .statsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contentGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .statsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboardSkeleton {
+        padding: 16px;
+    }
+}

@@ -1,0 +1,201 @@
+.container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: var(--space-8);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: var(--space-8);
+}
+
+.title {
+    font-size: var(--text-3xl);
+    font-weight: var(--font-bold);
+    color: var(--text-primary);
+    margin-bottom: var(--space-3);
+}
+
+.subtitle {
+    font-size: var(--text-base);
+    color: var(--text-muted);
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Role cards */
+.roles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4);
+    margin-bottom: var(--space-8);
+}
+
+.roleCard {
+    position: relative;
+    padding: var(--space-6);
+    background: var(--glass-bg);
+    border: 2px solid var(--glass-border);
+    border-radius: var(--radius-xl);
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.roleCard:hover {
+    background: var(--glass-bg-hover);
+    border-color: var(--glass-border-hover);
+}
+
+.roleCard.selected {
+    border-color: var(--role-color);
+    background: rgba(var(--role-color), 0.05);
+}
+
+.selectIndicator {
+    position: absolute;
+    top: var(--space-3);
+    right: var(--space-3);
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--glass-border);
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-fast);
+}
+
+.roleCard.selected .selectIndicator {
+    background: var(--role-color);
+    border-color: var(--role-color);
+    color: white;
+}
+
+.iconWrapper {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--role-color) 0%, rgba(var(--role-color), 0.7) 100%);
+    border-radius: var(--radius-lg);
+    color: white;
+    margin-bottom: var(--space-4);
+}
+
+.roleContent {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.roleName {
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    color: var(--text-primary);
+}
+
+.roleDescription {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-bottom: var(--space-4);
+}
+
+.features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.features li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-xs);
+    color: var(--text-secondary);
+}
+
+.features li svg {
+    color: var(--accent-success);
+    flex-shrink: 0;
+}
+
+/* Submit button */
+.submitBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    padding: var(--space-4) var(--space-8);
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+    font-weight: var(--font-semibold);
+    color: white;
+    background: var(--gradient-primary);
+    border: none;
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+}
+
+.submitBtn:hover:not(:disabled) {
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+}
+
+.submitBtn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.spinner {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Note */
+.note {
+    text-align: center;
+    margin-top: var(--space-4);
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .roles {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: var(--space-4);
+    }
+
+    .title {
+        font-size: var(--text-2xl);
+    }
+
+    .roleCard {
+        padding: var(--space-4);
+    }
+}

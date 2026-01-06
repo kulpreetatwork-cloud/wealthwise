@@ -1,0 +1,49 @@
+.chartContainer {
+  width: 100%;
+  min-height: 200px;
+}
+
+/* Tooltip styling override */
+.recharts-tooltip-wrapper {
+  outline: none;
+}
+
+.recharts-default-tooltip {
+  background: var(--bg-tertiary) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: 8px !important;
+}
+
+/* Legend styling */
+.recharts-legend-wrapper {
+  padding-top: 16px !important;
+}
+
+.recharts-legend-item-text {
+  color: var(--text-secondary) !important;
+  font-size: 12px;
+}
+
+/* Animation for bars */
+.recharts-bar-rectangle {
+  transition: opacity 0.2s ease;
+}
+
+.recharts-bar-rectangle:hover {
+  opacity: 0.8;
+}
+
+/* Gradient animation for area charts */
+.recharts-area-area {
+  transition: opacity 0.3s ease;
+}
+
+/* Pie chart hover effect */
+.recharts-pie-sector {
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.recharts-pie-sector:hover {
+  transform: scale(1.02);
+}
