@@ -25,6 +25,11 @@
   <img src="https://img.shields.io/badge/Currency-INR%20₹-orange?style=flat-square" alt="INR Currency" />
 </p>
 
+<p align="center">
+  <a href="https://wealthwise-topaz.vercel.app"><img src="https://img.shields.io/badge/🚀%20Live%20Demo-wealthwise--topaz.vercel.app-blue?style=for-the-badge" alt="Live Demo" /></a>
+  <a href="https://wealthwise-api-6vzc.onrender.com/health"><img src="https://img.shields.io/badge/API-Render-46E3B7?style=for-the-badge&logo=render" alt="API on Render" /></a>
+</p>
+
 ---
 
 ## ✨ Overview
