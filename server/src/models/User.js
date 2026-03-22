@@ -23,7 +23,7 @@ const userSchema = new mongoose.Schema(
         role: {
             type: String,
             enum: ['individual', 'student', 'business'],
-            default: null, // Role is selected after registration
+            default: 'individual',
         },
         profile: {
             firstName: {

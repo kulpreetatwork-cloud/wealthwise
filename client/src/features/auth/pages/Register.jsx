@@ -71,7 +71,7 @@ const Register = () => {
 
         if (result.success) {
             toast.success('Account created successfully!');
-            navigate('/role-select');
+            navigate('/dashboard');
         } else {
             toast.error(result.error);
         }

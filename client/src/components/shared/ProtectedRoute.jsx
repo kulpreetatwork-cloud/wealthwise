@@ -16,11 +16,6 @@ const ProtectedRoute = ({ children }) => {
         return <Navigate to="/login" state={{ from: location }} replace />;
     }
 
-    // Check if user has selected a role
-    if (!user?.role) {
-        return <Navigate to="/role-select" replace />;
-    }
-
     return children;
 };
 

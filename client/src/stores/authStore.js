@@ -58,21 +58,6 @@ export const useAuthStore = create(
                 }
             },
 
-            // Set role
-            setRole: async (role) => {
-                try {
-                    const response = await api.put('/users/profile', { role });
-                    const updatedUser = response.data.data;
-
-                    set({ user: updatedUser });
-
-                    return { success: true };
-                } catch (error) {
-                    const message = error.response?.data?.message || 'Failed to set role';
-                    return { success: false, error: message };
-                }
-            },
-
             // Logout
             logout: async () => {
                 try {

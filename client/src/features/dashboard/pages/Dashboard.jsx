@@ -22,8 +22,6 @@ import TrendChart from '../components/TrendChart';
 import QuickActions from '../components/QuickActions';
 import AccountModal from '../components/AccountModal';
 import ConfirmModal from '../../../components/ui/ConfirmModal';
-import StudentDashboard from '../components/StudentDashboard';
-import BusinessDashboard from '../components/BusinessDashboard';
 import styles from './Dashboard.module.css';
 
 const Dashboard = () => {
@@ -35,9 +33,6 @@ const Dashboard = () => {
     const [editingAccount, setEditingAccount] = useState(null);
     const [deleteTarget, setDeleteTarget] = useState(null);
     const hasFetched = useRef(false);
-
-    // Role check
-    const userRole = user?.role || 'individual';
 
     useEffect(() => {
         if (hasFetched.current) return;
@@ -245,24 +240,6 @@ const Dashboard = () => {
                     </div>
                 </motion.div>
             </div>
-
-            {/* Role-Specific Dashboard Sections */}
-            {userRole === 'student' && (
-                <StudentDashboard
-                    overview={overview}
-                    goals={dashboardData?.goals || []}
-                    onRefresh={handleRefresh}
-                />
-            )}
-
-            {userRole === 'business' && (
-                <BusinessDashboard
-                    overview={overview}
-                    transactions={dashboardData?.recentTransactions || []}
-                    budgets={dashboardData?.budgets || []}
-                    onRefresh={handleRefresh}
-                />
-            )}
 
             {/* Account Modal */}
             <AccountModal

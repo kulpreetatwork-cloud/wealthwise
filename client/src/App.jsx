@@ -14,7 +14,6 @@ import ProtectedRoute from './components/shared/ProtectedRoute';
 // Lazy load pages for code splitting
 const Login = lazy(() => import('./features/auth/pages/Login'));
 const Register = lazy(() => import('./features/auth/pages/Register'));
-const RoleSelect = lazy(() => import('./features/auth/pages/RoleSelect'));
 
 const Dashboard = lazy(() => import('./features/dashboard/pages/Dashboard'));
 const Transactions = lazy(() => import('./features/transactions/pages/Transactions'));
@@ -75,7 +74,6 @@ function App() {
         <Route element={<AuthLayout />}>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/role-select" element={<RoleSelect />} />
         </Route>
 
         {/* Protected Routes - Dashboard */}
